@@ -1,0 +1,61 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        // loader
+        $("#loader").hide();
+        $("#loader").ajaxStart(function(){
+            $(this).show();
+        });
+        $("#loader").ajaxStop(function(){
+            $(this).hide();
+        });
+        // jquery ajax
+        $('#button').click(function(){
+            $.ajax({
+                url: "{$config->site_url('template/example/ajax_result')}" + '/' + showValues(),
+                cache: false,
+                success: function(data){
+                    $('#target').append(data);
+                    $('#target').children(":last").hide().slideDown(500);
+                    $("#input_txt").val("");
+                }
+            });
+        });
+        // close
+        $('.close').click(function(){
+            $(this).parent().parent().hide(500);
+        });
+        // ------------------------------
+        function showValues() {
+            var str = $("#input_txt").val();
+            return str;
+        }
+    });
+</script>
+<div class="head-content">
+    <h3>JQuery Ajax</h3>
+    <div class="clear"></div>
+</div>
+<div id="target">
+    <div class="wall-post">
+        <img src="{$BASEURL}resource/doc/temp/user-image.png" alt="" />
+        <span><a href="#" class="close">close</a></span>
+        <p>
+            <b>Maas Dimasa</b>
+            <br />
+            Baju pengantin KD pesan di Vera Wang???!!! Kereeenn....
+        </p>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="wall-form">
+    <form action="#">
+        <table>
+            <tr>
+                <td><textarea name="wall" cols="100" rows="1" id="input_txt"></textarea></td>
+            </tr>
+            <tr>
+                <td><a href="#" class="wall-button" id="button">Share</a> &nbsp; <img src="{$BASEURL}resource/doc/images/icon/ajax-loader.gif" alt="" id="loader" /></td>
+            </tr>
+        </table>
+    </form>
+</div>

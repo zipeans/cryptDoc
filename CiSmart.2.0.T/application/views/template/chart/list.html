@@ -1,0 +1,10 @@
+<div class="head-content">
+    <h3>PHP with FusionChart Free</h3>
+    <div class="clear"></div>
+</div>
+<div id="chartdiv">FusionCharts. </div>
+<script type="text/javascript">
+    var chart = new FusionCharts("{$BASEURL}resource/doc/charts/FCF_Column3D.swf", "ChartId", "600", "350");
+    chart.setDataURL("{$config->site_url('template/chart/data_xml_Column3D')}");
+    chart.render("chartdiv");
+</script>

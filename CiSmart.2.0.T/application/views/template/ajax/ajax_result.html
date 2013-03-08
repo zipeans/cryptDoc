@@ -1,0 +1,18 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        // close
+        $('.close').click(function(){
+            $(this).parent().parent().hide(500);
+        });
+    });
+</script>
+<div class="wall-post">
+    <img src="{$BASEURL}resource/doc/temp/user-image.png" alt="" />
+    <span><a href="#" class="close">close</a></span>
+    <p>
+        <b>Maas Dimasa</b>
+        <br />
+        {$ajax_content}
+    </p>
+    <div class="clear"></div>
+</div>

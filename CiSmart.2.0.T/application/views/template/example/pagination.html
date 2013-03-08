@@ -1,0 +1,35 @@
+<div class="head-content">
+    <h3>Pagination with CI</h3>
+    <div class="clear"></div>
+</div>
+<div class="pageRow">
+    <div class="pageNav">
+        <ul>
+            <li class="info"><strong>{$pagination.start|default:'0'} - {$pagination.end|default:'0'}</strong> dari <strong>{$pagination.total|default:'0'}</strong> Data</li>
+            {$pagination.data|default:''}
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+<table class="table-view" width="100%">
+    <tr>
+        <th width="5%">No</th>
+        <th width="20%">Text</th>
+        <th width="20%">Radio</th>
+        <th width="20%">Select</th>
+        <th width="35%">Select By References</th>
+    </tr>
+    {foreach from=$rs_id item=result}
+    <tr {if ($no % 2) <> 0}class="blink-row"{/if}>
+        <td>{$no++}.</td>
+        <td>{$result.teks}</td>
+        <td align="center">{$result.radiobaten|capitalize}</td>
+        <td align="center">{$result.selekbok|capitalize}</td>
+        <td>{$result.nama}</td>
+    </tr>
+    {foreachelse}
+    <tr>
+        <td colspan="5">Empty</td>
+    </tr>
+    {/foreach}
+</table>

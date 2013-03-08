@@ -1,0 +1,60 @@
+<div class="head-content">
+    <h3>CRUD Template Standards</h3>
+    <div class="head-content-nav">
+        <ul>
+            <li><a href="#" class="active">Edit Data</a></li>
+            <li><a href="{$config->site_url('template/crud/add/')}"><img src="{$BASEURL}resource/doc/images/icon/add-icon.png" alt="" /> Add Data</a></li>
+            <li><a href="{$config->site_url('template/crud/')}">List Data</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- notification template -->
+{include file="base/templates/notification.html"}
+<!-- end of notification template-->
+<form action="{$config->site_url('template/crud/process_edit')}" method="post">
+    <input type="hidden" name="id_data" value="{$result.id_data|default:''}" />
+    <table class="table-input" width="100%">
+        <tr class="headrow">
+            <th colspan="2">Edit Data</th>
+        </tr>
+        <tr>
+            <td width="25%">Example Teks *</td>
+            <td width="75%"><input type="text" name="teks" maxlength="30" size="50" value="{$result.teks|default:''}" /> </td>
+        </tr>
+        <tr>
+            <td>Example Radio *</td>
+            <td>
+                {foreach from=$radio_array key=index item=val}
+                <label>
+                    <input type="radio" name="radiobaten" value="{$index}" {if {$result.radiobaten|default:''} == {$index}}checked="checked"{/if} /> {$val}
+                </label>
+                {/foreach}
+            </td>
+        </tr>
+        <tr>
+            <td>Example Select *</td>
+            <td>
+                <select name="selekbok">
+                    <option value=""></option>
+                    <option value="yes" {if {$result.selekbok|default:''} == "yes"}selected="selected"{/if}>Yes</option>
+                    <option value="no"{if {$result.selekbok|default:''} == "no"}selected="selected"{/if}>No</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Example Select By References *</td>
+            <td>
+                <select name="selekbok_id">
+                    <option value=""></option>
+                    {foreach from=$ref_data item=data}
+                    <option value="{$data.id_ref}" {if {$result.selekbok_id|default:''} == $data.id_ref}selected="selected"{/if}>{$data.nama}</option>
+                    {/foreach}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" name="save" value="Simpan" class="edit-button" /> </td>
+        </tr>
+    </table>
+</form>

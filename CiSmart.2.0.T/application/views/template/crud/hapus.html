@@ -1,0 +1,41 @@
+<div class="head-content">
+    <h3>CRUD Template Standards</h3>
+    <div class="head-content-nav">
+        <ul>
+            <li><a href="#" class="active">Hapus Data</a></li>
+            <li><a href="{$config->site_url('template/crud/add/')}"><img src="{$BASEURL}resource/doc/images/icon/add-icon.png" alt="" /> Add Data</a></li>
+            <li><a href="{$config->site_url('template/crud/')}">List Data</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- notification template -->
+{include file="base/templates/notification.html"}
+<!-- end of notification template-->
+<form action="{$config->site_url('template/crud/process_delete')}" method="post">
+    <input type="hidden" name="id_data" value="{$result.id_data|default:''}" />
+    <table class="table-input" width="100%">
+        <tr class="headrow">
+            <th colspan="2">Hapus Data</th>
+        </tr>
+        <tr>
+            <td width="25%">Example Teks *</td>
+            <td width="75%">{$result.teks|default:''}</td>
+        </tr>
+        <tr>
+            <td>Example Radio *</td>
+            <td>{$result.radiobaten|default:''}</td>
+        </tr>
+        <tr>
+            <td>Example Select *</td>
+            <td>{$result.selekbok|default:''}</td>
+        </tr>
+        <tr>
+            <td>Example Select By References *</td>
+            <td>{$result.nama|default:''}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" name="save" value="Hapus" class="edit-button" /> </td>
+        </tr>
+    </table>
+</form>

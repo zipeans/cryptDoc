@@ -1,0 +1,35 @@
+<div class="head-content">
+    <h3>File Uploader</h3>
+    <div class="clear"></div>
+</div>
+<!-- notification template -->
+{include file="base/templates/notification.html"}
+<!-- end of notification template-->
+<form action="{$config->site_url('template/example/email_send')}" method="post" class="form-input">
+    <table class="table-input" width="100%">
+        <tr class="headrow">
+            <th colspan="2">Kirim Email</th>
+        </tr>
+        <tr>
+            <td width="25%">Subject</td>
+            <td width="75%"><input type="text" name="email_subject" size="50" maxlength="100" value="{$result.email_subject|default:''}" /> </td>
+
+        </tr>
+        <tr>
+            <td>To</td>
+            <td><input type="text" name="email_to" size="20" maxlength="50" value="{$result.email_to|default:''}" /></td>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td><textarea name="email_msg" cols="30" rows="3">{$result.email_msg|default:''}</textarea> </td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="save" value="Kirim" class="edit-button" />
+            </td>
+        </tr>
+    </table>
+</form>
+

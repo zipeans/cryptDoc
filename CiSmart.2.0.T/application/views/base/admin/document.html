@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <!-- head -->
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+        <meta name='description' content='' />
+        <meta name='keywords' content='' />
+        <meta name='robots' content='index,follow' />
+        <title>CiSmart dan Source Code Standard</title>
+        <link href="{$BASEURL}/resource/doc/images/icon/shortcut_icon.jpg" rel="SHORTCUT ICON" />
+        <!-- themes style -->
+        <link rel="stylesheet" type="text/css" href="{$THEMESPATH}" media="screen" />
+        <!-- other style -->
+        {$LOAD_STYLE}
+    </head>
+    <!-- body -->
+    <body class="common">
+        <!-- load javascript -->
+        {$LOAD_JAVASCRIPT}
+        <!-- end of javascript	-->
+        <!-- layout -->
+        <div class="page">
+            <div class="header">
+                <h1>CiSmart dan Source Code Standard</h1>
+                <h2>PHP CodeIgniter dan Smarty, dan standard kode</h2>
+            </div>
+            <div class="navigation">
+                <div class="info"></div>
+                <ul>
+                    {foreach from=$list_top_nav item=menu}
+                    <li>
+                        <a href="{$config->site_url($menu.url_menu)}" {if $menu.id_nav == $top_menu_selected}class="active"{/if}>
+                           <img src="{$BASEURL}resource/doc/images/icon/{$menu.id_nav}.png" alt="" />{$menu.judul}<br /><small>{$menu.deskripsi}</small>
+                        </a>
+                    </li>
+                    {/foreach}
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="main-content">
+                <div class="content">
+                    {include file="$template_content"}
+                </div>
+                <div class="sidebar">
+                    {include file="$template_sidebar"}
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- end of layout	-->
+    </body>
+    <!-- end body -->
+</html>

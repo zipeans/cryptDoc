@@ -1,0 +1,15 @@
+<div class="loginBox-body">
+    <p>
+        <img src="{$BASEURL}resource/doc/images/icon/notification-icon.png" alt="" />You are enter restricted area, <strong>Please Login</strong> First to acces this page !!
+    </p>
+    <form action="{$config->site_url('login/login/login_process')}" method="post" enctype="multipart/form-data">
+        <label for="aid_username">Username :</label>
+        <input type="text" name="username" maxlength="20" />
+        <br />
+        <label for="aid_password">Password :</label>
+        <input type="password" name="pass" maxlength="20" />
+        <br />
+        <label> </label>
+        <input class="button" type="submit" value="" name="save[login]" />
+    </form>
+</div>

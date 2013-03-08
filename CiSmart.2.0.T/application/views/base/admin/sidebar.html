@@ -1,0 +1,21 @@
+<div class="side-info">
+    <img src="{$BASEURL}resource/doc/temp/user-image.png" alt="" />
+    <p><b>Welly Widodo S.P.</b></p>
+    <p>Administrator Super</p>
+    <div class="clear"></div>
+</div>
+<div class="side-menu">
+    <h3>Menu</h3>
+    <ul>
+        {foreach from=$list_side_nav item=menu}
+        <li>
+            <a href="{$config->site_url($menu.url_menu)}" {if $menu.id_nav == $side_menu_selected}class="side-active"{/if}>{$menu.judul}</a>
+        </li>
+        {/foreach}
+    </ul>
+</div>
+<div class="side-menu">
+    <ul>
+        <li><a href="{$url_logout}"><img src="{$BASEURL}resource/doc/images/icon/logout-icon.png" alt="" /> Logout</a></li>
+    </ul>
+</div>

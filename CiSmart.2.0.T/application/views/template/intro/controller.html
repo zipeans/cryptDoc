@@ -1,0 +1,33 @@
+<div class="head-content">
+    <h3>Lets start with Smarty</h3>
+    <div class="clear"></div>
+</div>
+<h4>Required</h4>
+<ul>
+    <li>Controller Class : <b>controllers/template/Intro.php</b></li>
+    <li>View Template : <b>views/template/intro/controller.html</b></li>
+</ul>
+<h4>Assign Variable</h4>
+<p>From <b>$a</b> : {$a}</p>
+<p>From <b>$b</b> : {$b}</p>
+<h4>If Statement</h4>
+<p>
+    {if $name eq 'Fred'}
+    <b>Welcome Sir.</b>
+    {elseif $name == $what}
+    <b>Welcome Andi.</b>
+    {else}
+    <b>Welcome, whatever you are.</b>
+    {/if}
+</p>
+<h4>Foreach Statement</h4>
+<ul>
+    {foreach from=$items key=myId item=i}
+    <li>key : {$myId} | {$i.no}: {$i.label}</li>
+    {/foreach}
+</ul>
+<h4>Using PHP Object</h4>
+<ul>
+    <li><a href="{$config->site_url('template/intro')}">Using CI Config object -> site link to template index</a></li>
+    <li><a href="{$config->site_url('template/intro/controller')}">Using CI Config object -> site link to template controller</a></li>
+</ul>
